@@ -2,7 +2,7 @@
 const http = require('http');
 const routes = require('./routes.js');
 // add a global for debugging
-global.DEBUG = false;
+global.DEBUG = true;
 
 // load the logEvents module
 const logEvents = require('./logEvents');

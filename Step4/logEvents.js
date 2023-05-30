@@ -29,8 +29,14 @@ const logEvents = async (event, level, message) => {
     const logItem = `${dateTime}\t${level}\t${event}\t${message}\t${uuid()}`;
     if(DEBUG) console.log(logItem);
     try {
+        // ensure logs/ folder also exists before adding the year folder
+        let logsFolder = 'logs';
+        if(DEBUG) console.log(logsFolder);
+        if(!fs.existsSync(path.join(__dirname, logsFolder))) {
+            await fsPromises.mkdir(path.join(__dirname, logsFolder));
+        }
         // Include year when managing log folders
-        const currFolder = 'logs/' + getYear(new Date());
+        let currFolder = 'logs/' + getYear(new Date());
         if(DEBUG) console.log(currFolder);
         if(!fs.existsSync(path.join(__dirname, currFolder))) {
             // include ./logs/yyyy
