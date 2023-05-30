@@ -4,7 +4,7 @@
   "description": "Building toward the week 4 QAP2",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +12,7 @@
   "dependencies": {
     "bcrypt": "^5.1.0",
     "date-fns": "^2.30.0",
+    "jest": "^29.5.0",
     "uuid": "^9.0.0"
   }
 }
